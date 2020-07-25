@@ -1,0 +1,58 @@
+{
+  "name": "blogger",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "mysql": "docker run -p 3306:3306 --name mysql-server -v ${PWD}/docker/mysql/:/docker-entrypoint-initdb.d/ -d mysql:latest",
+    "server": "node-env-run server --exec nodemon | pino-colada",
+	"dev": "run-p server start"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "connect-flash": "^0.1.1",
+    "express-pino-logger": "^5.0.0",
+    "express-session": "^1.17.1",
+    "md5": "^2.2.1",
+    "mysql": "^2.18.1",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pino-colada": "^2.0.1"
+  }
+}
